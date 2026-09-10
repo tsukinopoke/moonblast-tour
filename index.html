@@ -322,6 +322,17 @@
   .mypage-intro p{ color:rgba(255,255,255,0.75); font-size:13.8px; }
   .mypage-intro .btn-fill{ align-self:flex-start; margin-top:6px; }
   .mypage-intro .login-note{ font-size:12px; color:rgba(255,255,255,0.55); }
+  .login-cta-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .btn-disabled{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:9px 18px; border-radius:999px; font-size:13px; font-weight:500;
+    background:rgba(255,255,255,0.12); color:rgba(255,255,255,0.5);
+    border:1px dashed rgba(255,255,255,0.3); cursor:not-allowed; pointer-events:none;
+  }
+  .coming-soon-badge{
+    font-size:11px; font-weight:700; letter-spacing:0.03em; color:#4A4266;
+    background:var(--gold); padding:4px 12px; border-radius:999px;
+  }
   .stamp-grid{ padding:40px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
   .stamp-card{
     display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px;
@@ -622,8 +633,11 @@
                   <span class="kicker">STAMP BOOK</span>
           <h2>あなたの巡業記録</h2>
           <p>行く先々で、めぐり逢う人がいる。参加するたびに、その回の開催地スタンプが増えていきます。どこの大会に参加したか、一目で振り返れる自分だけのページです。</p>
-          <a href="#" class="btn btn-fill">Discordでログインする</a>
-          <span class="login-note">※ログイン機能は準備中です。連携後は名前・アイコンもDiscordから反映予定。近日公開。</span>
+          <div class="login-cta-row">
+            <a href="#" class="btn btn-disabled" aria-disabled="true">Discordでログインする</a>
+            <span class="coming-soon-badge">準備中</span>
+          </div>
+          <span class="login-note">※ログイン機能は現在準備中で、まだご利用いただけません。連携後は名前・アイコンもDiscordから反映予定です。近日公開をお楽しみに。</span>
           <label class="share-name-field">
             シェア画像に表示する名前(任意)
             <input type="text" placeholder="例:つきの" maxlength="16" data-share-name>
@@ -774,10 +788,10 @@
       </div>
       <div class="tag-row">
         <a class="tag-pill" href="https://twitter.com/intent/tweet?hashtags=ムンフォツアー" target="_blank" rel="noopener">#ムンフォツアー</a>
-        <a class="tag-pill" href="https://twitter.com/intent/tweet?hashtags=ムンフォツアー大阪" target="_blank" rel="noopener">#ムンフォツアー大阪</a>
+        <a class="tag-pill" href="https://twitter.com/intent/tweet?hashtags=ムンフォツアーin大阪" target="_blank" rel="noopener">#ムンフォツアーin大阪</a>
       </div>
       <div class="hero-actions" style="justify-content:center;">
-        <a href="https://twitter.com/intent/tweet?hashtags=ムンフォツアー大阪&text=" class="btn btn-fill" target="_blank" rel="noopener">ツイートする</a>
+        <a href="https://twitter.com/intent/tweet?hashtags=ムンフォツアーin大阪&text=" class="btn btn-fill" target="_blank" rel="noopener">ツイートする</a>
         <a href="https://x.com/moonblast_tour" class="btn btn-line" style="border-color:rgba(255,255,255,0.5); color:#fff;" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@moonblast_tour</a>
       </div>
     </div>
@@ -988,7 +1002,7 @@
     ctx.textAlign = 'right';
     ctx.fillStyle = 'rgba(255,255,255,0.5)';
     ctx.font = '400 13px "Zen Kaku Gothic New", sans-serif';
-    ctx.fillText('#ムンフォツアー大阪', W - 32, H - 28);
+    ctx.fillText('#ムンフォツアーin大阪', W - 32, H - 28);
 
     if (name) {
       ctx.textAlign = 'left';
@@ -1140,7 +1154,7 @@
       ctx.fillStyle = 'rgba(255,255,255,0.5)';
       ctx.font = '400 13px "Zen Kaku Gothic New", sans-serif';
       ctx.textAlign = 'right';
-      ctx.fillText('#ムンフォツアー大阪', W - 32, H - 28);
+      ctx.fillText('#ムンフォツアーin大阪', W - 32, H - 28);
 
       const name = getShareName();
       if (name) { ctx.textAlign = 'left'; drawIdentity(ctx, 48, H - 32, name); }

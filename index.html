@@ -305,7 +305,7 @@
   /* ---------- mypage / stamp book ---------- */
   .mypage{ background:var(--white); scroll-margin-top:90px; }
   .mypage-panel{
-    display:grid; grid-template-columns:0.85fr 1.15fr; gap:0;
+    display:grid; grid-template-columns:1fr; gap:0;
     border-radius:26px; overflow:hidden;
     background:linear-gradient(160deg, var(--lavender-white), #fff 55%);
     border:1px solid rgba(154,140,180,0.16);
@@ -333,6 +333,18 @@
     font-size:11px; font-weight:700; letter-spacing:0.03em; color:#4A4266;
     background:var(--gold); padding:4px 12px; border-radius:999px;
   }
+  .stamp-preview-strip{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:28px;
+    padding:36px 32px; background:#fff;
+  }
+  .stamp-preview-item{ display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .stamp-preview-item span{ font-size:12px; color:var(--ink-soft); font-weight:600; }
+  .stamp-preview-locked{
+    width:74px; height:74px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    border:2px dashed rgba(154,140,180,0.35); background:var(--lavender-white);
+  }
+  .stamp-preview-locked span{ font-family:'Shippori Mincho', serif; font-size:18px; color:var(--ink-soft); }
+  @media (max-width:700px){ .stamp-preview-strip{ gap:18px; padding:28px 20px; } }
   .stamp-grid{ padding:40px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; }
   .stamp-card{
     display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px;
@@ -521,7 +533,7 @@
           <span class="num">第3回 ムンフォツアー</span>
           <h3>2026年9月21日(月・祝)<br>大阪で、また巡り合う。</h3>
           <dl class="event-facts">
-            <dt>会場</dt><dd>eスタジアムなんば本店(大阪)</dd>
+            <dt>会場</dt><dd>eスタジアムなんば本店(大阪)<br><span style="font-size:11.5px; color:var(--ink-soft); font-weight:400;">「e stadium なんば powered by Tabio」に加え、同フロアの「ENTER FORCE.36 XR field」も使用予定です</span></dd>
             <dt>参加費</dt><dd>2,000円(当日現金払い)</dd>
             <dt>定員</dt><dd>64名(応募状況により増枠あり)</dd>
             <dt>使用タイトル</dt><dd>Pokémon Champions・レギュレーションM-C</dd>
@@ -530,6 +542,7 @@
             <a href="https://tonamel.com/competition/aj0RB" class="btn btn-fill" target="_blank" rel="noopener">Tonamelでエントリーする</a>
             <a href="event-info.html" class="btn btn-line">要項をすべて見る</a>
           </div>
+          <p style="margin-top:14px; font-size:11px; color:var(--ink-soft);">今回(第3回)は<a href="https://x.com/ENTERFORCE_36" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">@ENTERFORCE_36</a>様のご協力で「ENTER FORCE.36 XR field」をお借りして開催しています</p>
         </div>
       </div>
     </div>
@@ -638,93 +651,42 @@
           </label>
           <span class="login-note">シェア画像イラスト: cherryice.grimさん</span>
         </div>
-        <svg width="0" height="0" style="position:absolute;"><defs><radialGradient id="stampGrad" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="var(--lavender-white)"/></radialGradient></defs></svg>
-        <div class="stamp-grid">
-          <div class="stamp-card" data-stamp>
-            <div class="stamp-mark"><svg viewBox="0 0 100 100" width="74" height="74">
-                <defs><path id="stampPath1" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
-                <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
-                <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
-                <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPath1" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
-                <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">福岡天神</tspan></text>
-              </svg></div>
-            <span class="stamp-round">第1回</span>
-            <span class="stamp-venue">天神チクモクビル</span>
-            <span class="stamp-date">2025.11.23</span>
-            <span class="stamp-tag">決勝トーナメント進出</span>
-            <div class="stamp-toggles">
-              <label class="stamp-toggle">
-                <input type="checkbox" data-record-toggle="score">
-                予選成績を含める
-              </label>
-              <label class="stamp-toggle">
-                <input type="checkbox" data-record-toggle="tag">
-                決勝トーナメント進出タグを含める
-              </label>
-            </div>
-            <p class="stamp-record" data-record-score>予選 4勝1敗</p>
-            <button class="stamp-share-btn" data-share-btn>シェア画像を作成</button>
-            <div class="stamp-canvas-wrap" data-canvas-wrap>
-              <canvas width="1080" height="608" data-canvas></canvas>
-              <a href="#" download="moonblast-stamp-1.png" data-download-link>画像を保存する</a>
-            </div>
+        <div class="stamp-preview-strip">
+          <svg width="0" height="0" style="position:absolute;"><defs><radialGradient id="stampGrad" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="var(--lavender-white)"/></radialGradient></defs></svg>
+          <div class="stamp-preview-item">
+            <svg viewBox="0 0 100 100" width="74" height="74">
+              <defs><path id="stampPathP1" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+              <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
+              <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPathP1" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
+              <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">福岡天神</tspan></text>
+            </svg>
+            <span>第1回</span>
           </div>
-          <div class="stamp-card" data-stamp>
-            <div class="stamp-mark"><svg viewBox="0 0 100 100" width="74" height="74">
-                <defs><path id="stampPath2" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
-                <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
-                <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
-                <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPath2" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
-                <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">東京</tspan></text>
-              </svg></div>
-            <span class="stamp-round">第2回</span>
-            <span class="stamp-venue">三茶しゃれなあどホール</span>
-            <span class="stamp-date">2026.04.18</span>
-            <span class="stamp-tag">決勝トーナメント進出</span>
-            <div class="stamp-toggles">
-              <label class="stamp-toggle">
-                <input type="checkbox" data-record-toggle="score">
-                予選成績を含める
-              </label>
-              <label class="stamp-toggle">
-                <input type="checkbox" data-record-toggle="tag">
-                決勝トーナメント進出タグを含める
-              </label>
-            </div>
-            <p class="stamp-record" data-record-score>予選 3勝2敗</p>
-            <button class="stamp-share-btn" data-share-btn>シェア画像を作成</button>
-            <div class="stamp-canvas-wrap" data-canvas-wrap>
-              <canvas width="1080" height="608" data-canvas></canvas>
-              <a href="#" download="moonblast-stamp-2.png" data-download-link>画像を保存する</a>
-            </div>
+          <div class="stamp-preview-item">
+            <svg viewBox="0 0 100 100" width="74" height="74">
+              <defs><path id="stampPathP2" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+              <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
+              <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPathP2" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
+              <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">東京</tspan></text>
+            </svg>
+            <span>第2回</span>
           </div>
-          <div class="stamp-card" data-stamp>
-            <div class="stamp-mark"><svg viewBox="0 0 100 100" width="74" height="74">
-                <defs><path id="stampPath3" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
-                <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
-                <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
-                <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPath3" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
-                <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">大阪難波</tspan></text>
-              </svg></div>
-            <span class="stamp-round">第3回</span>
-            <span class="stamp-venue">eスタジアムなんば本店</span>
-            <span class="stamp-date">2026.09.21</span>
-            <p class="stamp-record is-shown">大会当日にスタンプが押されます</p>
+          <div class="stamp-preview-item">
+            <svg viewBox="0 0 100 100" width="74" height="74">
+              <defs><path id="stampPathP3" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+              <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
+              <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
+              <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPathP3" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
+              <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">大阪難波</tspan></text>
+            </svg>
+            <span>第3回</span>
           </div>
-          <div class="stamp-card is-locked">
-            <div class="stamp-mark" style="border-radius:50%; border:2px dashed rgba(154,140,180,0.35); background:var(--lavender-white);"><span style="font-family:'Shippori Mincho', serif; font-size:18px; color:var(--ink-soft);">?</span></div>
-            <span class="stamp-round">第4回</span>
-            <span class="stamp-venue">次回開催地は未定</span>
-            <span class="stamp-date">Coming soon</span>
+          <div class="stamp-preview-item is-locked">
+            <div class="stamp-preview-locked"><span>?</span></div>
+            <span>第4回</span>
           </div>
-        </div>
-        <div class="stamp-combo-actions">
-          <button class="stamp-share-btn" data-combo-btn="attended">参加した回をまとめて1枚に</button>
-          <button class="stamp-share-btn" data-combo-btn="all">全3回をまとめて1枚に</button>
-        </div>
-        <div class="stamp-canvas-wrap" data-combo-canvas-wrap>
-          <canvas width="1200" height="675" data-combo-canvas></canvas>
-          <a href="#" download="moonblast-stamps.png" data-combo-download-link>画像を保存する</a>
         </div>
       </div>
     </div>

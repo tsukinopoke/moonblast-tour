@@ -343,15 +343,9 @@
   .stamp-mark{
     width:74px; height:74px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    background:radial-gradient(circle at 35% 30%, #fff, var(--lavender-white) 70%);
-    border:2px solid var(--pink);
-    box-shadow:0 6px 14px rgba(217,169,201,0.35);
     position:relative;
   }
-  .stamp-mark::before{
-    content:''; position:absolute; inset:5px; border-radius:50%;
-    border:1px dashed var(--periwinkle);
-  }
+  .stamp-mark::before{ display:none; }
   .stamp-card.is-locked .stamp-mark{
     background:var(--lavender-white); border-color:rgba(154,140,180,0.3); box-shadow:none;
   }
@@ -644,9 +638,16 @@
           </label>
           <span class="login-note">シェア画像イラスト: cherryice.grimさん</span>
         </div>
+        <svg width="0" height="0" style="position:absolute;"><defs><radialGradient id="stampGrad" cx="35%" cy="30%" r="75%"><stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="var(--lavender-white)"/></radialGradient></defs></svg>
         <div class="stamp-grid">
           <div class="stamp-card" data-stamp>
-            <div class="stamp-mark"><span>福岡<br>天神</span></div>
+            <div class="stamp-mark"><svg viewBox="0 0 100 100" width="74" height="74">
+                <defs><path id="stampPath1" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+                <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
+                <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPath1" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
+                <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">福岡天神</tspan></text>
+              </svg></div>
             <span class="stamp-round">第1回</span>
             <span class="stamp-venue">天神チクモクビル</span>
             <span class="stamp-date">2025.11.23</span>
@@ -669,7 +670,13 @@
             </div>
           </div>
           <div class="stamp-card" data-stamp>
-            <div class="stamp-mark"><span>東京</span></div>
+            <div class="stamp-mark"><svg viewBox="0 0 100 100" width="74" height="74">
+                <defs><path id="stampPath2" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+                <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
+                <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPath2" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
+                <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">東京</tspan></text>
+              </svg></div>
             <span class="stamp-round">第2回</span>
             <span class="stamp-venue">三茶しゃれなあどホール</span>
             <span class="stamp-date">2026.04.18</span>
@@ -692,14 +699,20 @@
             </div>
           </div>
           <div class="stamp-card" data-stamp>
-            <div class="stamp-mark"><span>大阪<br>難波</span></div>
+            <div class="stamp-mark"><svg viewBox="0 0 100 100" width="74" height="74">
+                <defs><path id="stampPath3" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+                <circle cx="50" cy="50" r="46" fill="url(#stampGrad)" stroke="var(--pink)" stroke-width="2"/>
+                <circle cx="50" cy="50" r="37" fill="none" stroke="var(--periwinkle)" stroke-width="1" stroke-dasharray="2.5,2.5"/>
+                <text font-size="6.2" font-weight="700" letter-spacing="1" fill="var(--pink)"><textPath href="#stampPath3" startOffset="50%" text-anchor="middle">✦ MOONBLAST TOUR ✦</textPath></text>
+                <text x="50" y="54" text-anchor="middle" font-family="'Shippori Mincho', serif" font-size="13" font-weight="600" fill="var(--ink)"><tspan x="50" dy="0">大阪難波</tspan></text>
+              </svg></div>
             <span class="stamp-round">第3回</span>
             <span class="stamp-venue">eスタジアムなんば本店</span>
             <span class="stamp-date">2026.09.21</span>
             <p class="stamp-record is-shown">大会当日にスタンプが押されます</p>
           </div>
           <div class="stamp-card is-locked">
-            <div class="stamp-mark"><span>?</span></div>
+            <div class="stamp-mark" style="border-radius:50%; border:2px dashed rgba(154,140,180,0.35); background:var(--lavender-white);"><span style="font-family:'Shippori Mincho', serif; font-size:18px; color:var(--ink-soft);">?</span></div>
             <span class="stamp-round">第4回</span>
             <span class="stamp-venue">次回開催地は未定</span>
             <span class="stamp-date">Coming soon</span>
@@ -752,7 +765,7 @@
         </details>
         <details class="faq-item">
           <summary><span class="faq-q-mark">Q</span>未成年でも参加できる?<span class="faq-arrow">▼</span></summary>
-          <p class="faq-answer">保護者の同意があれば参加できます。未成年の方に保護者が付き添う場合は無料で入場できるので、事前に公式Xかつきの宛にご連絡ください。</p>
+          <p class="faq-answer">保護者の同意があれば参加できます。未成年の方に保護者が付き添う場合は無料で入場できるので、事前に<a href="https://x.com/moonblast_tour" target="_blank" rel="noopener" style="color:var(--pink); font-weight:600; text-decoration:underline;">公式X</a>か<a href="https://x.com/tsukinopichu" target="_blank" rel="noopener" style="color:var(--pink); font-weight:600; text-decoration:underline;">つきの</a>宛にご連絡ください。</p>
         </details>
         <details class="faq-item">
           <summary><span class="faq-q-mark">Q</span>見るだけの参加はできる?<span class="faq-arrow">▼</span></summary>
@@ -788,10 +801,9 @@
       </div>
       <div class="tag-row">
         <a class="tag-pill" href="https://twitter.com/intent/tweet?hashtags=ムンフォツアー" target="_blank" rel="noopener">#ムンフォツアー</a>
-        <a class="tag-pill" href="https://twitter.com/intent/tweet?hashtags=ムンフォツアーin大阪" target="_blank" rel="noopener">#ムンフォツアーin大阪</a>
-      </div>
+        <a class="tag-pill" href="https://twitter.com/intent/tweet?hashtags=ムンフォツアーin大阪" target="_blank" rel="noopener">#ムンフォツアーin大阪</a>      </div>
       <div class="hero-actions" style="justify-content:center;">
-        <a href="https://twitter.com/intent/tweet?hashtags=ムンフォツアーin大阪&text=" class="btn btn-fill" target="_blank" rel="noopener">ツイートする</a>
+        <a href="https://twitter.com/intent/tweet?hashtags=ムンフォツアー,ムンフォツアーin大阪&text=" class="btn btn-fill" target="_blank" rel="noopener">ツイートする</a>
         <a href="https://x.com/moonblast_tour" class="btn btn-line" style="border-color:rgba(255,255,255,0.5); color:#fff;" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@moonblast_tour</a>
       </div>
     </div>

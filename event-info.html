@@ -378,6 +378,17 @@
 
   /* ---------- info blocks ---------- */
   /* ---------- info blocks ---------- */
+  .cooperation-wrap{ padding:0 0 40px; background:var(--white); }
+  .cooperation-note{
+    max-width:1120px; margin:0 auto; padding:24px 32px;
+    border-radius:18px;
+    background:linear-gradient(135deg, var(--gold) 0%, #fff 70%);
+    border:1px solid var(--gold-line);
+    text-align:center; font-size:13px; line-height:1.9; color:var(--ink-soft);
+  }
+  .cooperation-note a{ color:var(--ink); font-weight:600; text-decoration:underline; }
+  @media (max-width:700px){ .cooperation-note{ padding:20px 22px; } }
+
   .info-block{ background:var(--white); border-top:1px solid rgba(154,140,180,0.14); }
   .info-block .section-head{ margin-bottom:40px; }
   .info-list{ display:flex; flex-direction:column; gap:0; border-radius:18px; overflow:hidden; border:1px solid rgba(154,140,180,0.16); }
@@ -479,7 +490,6 @@
           <a href="https://tonamel.com/competition/aj0RB" class="btn btn-fill" target="_blank" rel="noopener">Tonamelでエントリーする</a>
         </div>
         <div class="overview-foot">
-          <a href="https://x.com/ENTERFORCE_36" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">@ENTERFORCE_36</a>様のご協力により、「ENTER FORCE.36 XR field」をお借りして開催いたします。ご協力いただきありがとうございます。<br>
           本イベントは、株式会社ポケモンが主催または協賛するものではありません。
         </div>
       </div>
@@ -492,14 +502,7 @@
       <div class="section-head">
         <span class="kicker">MORE INFO</span>
         <h2>当日の流れ・サブイベントもチェック</h2>
-        <p>集合時間や対戦の進み方、対戦の合間の過ごし方など、大会をもっと楽しむための情報はこちらから。</p>
-        <div class="mini-schedule">
-          <span><b>10:00</b>受付(10:25開会式までに)</span>
-          <span><b>10:25</b>開会式</span>
-          <span><b>11:20〜</b>予選</span>
-          <span><b>15:00〜</b>決勝T</span>
-          <span><b>20:00</b>閉会式</span>
-        </div>
+        <p>集合時間や対戦の進み方、対戦の合間の過ごし方など、大会をもっと楽しむための情報はこちらから。詳しいタイムスケジュールは下記のページをご覧ください。</p>
       </div>
       <div class="pages-grid">
         <a href="schedule.html" class="page-card">
@@ -540,6 +543,14 @@
       <p style="margin-top:20px; font-size:12.5px; color:var(--ink-soft);">※Tonamelでエントリーした時点で、本要項および当日のスタッフの裁定に同意したものとみなします。</p>
     </div>
   </section>
+
+  <div class="cooperation-wrap">
+    <div class="wrap">
+      <div class="cooperation-note">
+        今回(第3回)は、<a href="https://x.com/ENTERFORCE_36" target="_blank" rel="noopener">@ENTERFORCE_36</a>様のご協力により、「ENTER FORCE.36 XR field」をお借りして開催いたします。ご協力いただきありがとうございます。
+      </div>
+    </div>
+  </div>
 
   <section class="info-block" id="rules">
     <div class="wrap">
@@ -686,8 +697,8 @@
         <p>大会に関するご質問は、以下のいずれかからお気軽にご連絡ください。</p>
       </div>
       <div class="hero-actions">
-        <a href="https://x.com/moonblast_tour" class="btn btn-fill" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@moonblast_tour</a>
-        <a href="https://x.com/tsukinopichu" class="btn btn-line" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>主催 @tsukinopichu</a>
+        <a href="https://x.com/moonblast_tour" class="btn btn-fill" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>公式X</a>
+        <a href="https://x.com/tsukinopichu" class="btn btn-line" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:inline-block; vertical-align:-2px; margin-right:6px;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>主催X</a>
         <a href="https://discord.gg/FY4dWaaHs9" class="btn btn-line" target="_blank" rel="noopener">Discordサーバー</a>
       </div>
     </div>
@@ -695,7 +706,7 @@
 
   <div class="notice-band">
     <div class="wrap">
-      <p>掲載内容は今後のミーティングやレギュレーション確定にあわせて更新されます。最新情報はTonamel要項・Discordでもご確認ください。</p>
+      <p>掲載内容は更新されることがあります。最新情報はTonamel要項・Discordでもご確認ください。</p>
     </div>
   </div>
 

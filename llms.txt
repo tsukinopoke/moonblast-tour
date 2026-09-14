@@ -1,0 +1,30 @@
+# ムンフォツアー (Moonblast Tour)
+
+> ムンフォツアーは、Pokémon Championsのシングルバトルを楽しむファン主催のオフライン対戦大会シリーズです。全国を巡業する形式で開催しており、第1回は福岡、第2回は東京、第3回は2026年9月21日(月・祝)に大阪で開催されます。
+
+本サイトはムンフォツアーの公式情報サイトです。株式会社ポケモンが主催・協賛するものではありません。
+
+## 主要ページ
+
+- [大会情報](https://tsukinopoke.github.io/moonblast-tour/event-info.html): 第3回(大阪)の日程・会場・参加費・エントリー方法・ルール・当日の注意事項
+- [タイムスケジュール](https://tsukinopoke.github.io/moonblast-tour/schedule.html): 当日の受付から閉会式までの進行
+- [サブイベント・謎解き](https://tsukinopoke.github.io/moonblast-tour/sub-events.html): 対戦の合間に楽しめる企画の紹介
+- [アーカイブ](https://tsukinopoke.github.io/moonblast-tour/archive.html): 過去大会(第1回福岡・第2回東京)の結果・配信・オフレポ
+
+## 第3回大会の概要
+
+- 日程: 2026年9月21日(月・祝)
+- 会場: 大阪府大阪市浪速区、eスタジアムなんば本店内「e stadium なんば powered by Tabio」および同フロアの「ENTER FORCE.36 XR field」
+- 参加費: 2,000円(当日現金払い)
+- 定員: 64名(対戦参加)、3名(見学)
+- 使用タイトル: Pokémon Champions(レギュレーションM-C)
+- ルール: シングルバトル、予選スイスドロー→決勝トーナメント
+- エントリー方法: Tonamel経由(要Discord参加)
+
+## お問い合わせ
+
+- 公式X: https://x.com/moonblast_tour
+- 主催X(つきの): https://x.com/tsukinopichu
+- Discord: https://discord.gg/FY4dWaaHs9
+
+最終更新: 2026年9月

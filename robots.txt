@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tsukinopoke.github.io/moonblast-tour/sitemap.xml
